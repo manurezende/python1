@@ -19,10 +19,16 @@ class Janela3(QWidget):
         self.edit_usuario = QLineEdit()
         self.edit_email = QLineEdit()
         self.edit_senha = QLineEdit()
+       
+        #esse comando deixa a semha oculta 
+        self.edit_senha.setEchoMode(QLineEdit.EchoMode.Password)
+    
         self.edit_acesso = QLineEdit()
+        
         
         # criar o botão
         self.botao_cad = QPushButton("cadastrar")       # botao_cad = botão de cadastro
+        self.botao_cad.clicked.connect(self.mensagem)
         
         # criar o layout vertical para organizar os controles
         layout = QVBoxLayout()
@@ -42,6 +48,14 @@ class Janela3(QWidget):
         layout.addWidget(self.botao_cad)
         
         self.setLayout(layout)
+        
+    # nesta função nós iremos mostrar no terminal o que estava na caixa edit(caixa de escrever)
+    # ira aparecer o email,senha,usuario e nivel de acesso
+    def mensagem(self):
+        print(self.edit_usuario.text())
+        print(self.edit_email.text())
+        print(self.edit_senha.text())
+        print(self.edit_acesso.text())
         
 app = QApplication(sys.argv)
 janela = Janela3()

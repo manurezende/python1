@@ -118,4 +118,9 @@ class Janela2(QWidget):
         
 app = QApplication(sys.argv)
 # inicia a tela, ou  seja carrega a janela em memoria
-jan = Jane
+jan = Janela2()
+# exibe a janela em tela
+jan.show()
+# o comando app.exec_ executa os comandos acima e gerencia o botão de fechar para retirar a janela
+app.exec_()
+        
